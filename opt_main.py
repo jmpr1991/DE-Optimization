@@ -1,5 +1,6 @@
 import constants
 import initialization
+import mutation
 
 import numpy as np
 
@@ -31,10 +32,13 @@ def main():
         gen = 0
         while gen < constants.N_GENERATIONS:
 
+            # Mutation
+            mutated_vector = mutation.mutation_function(parent_population)
+
             # Parent selection and recombination
 
 
-            # Mutation
+
 
             # Survival selection
 
