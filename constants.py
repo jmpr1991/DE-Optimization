@@ -24,4 +24,6 @@ FUNCTION = 'SCHWEFEL' # parameter to indicate the function to optimize 'SPHERE' 
 
 N_EXECUTIONS = 1 #number of executions
 N_GENERATIONS = 1200 #number of generations
+DIM = 10 # function dimension
+POPULATION_SIZE = 30 # population size
 
