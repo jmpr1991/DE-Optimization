@@ -77,7 +77,7 @@ def mutation_best(parent_vector):
         selected_indexes = random.sample(list(index_vector), 2)
 
         for j in range(constants.DIM):
-            mutated_vector[j,i] = parent_vector[j, sorted_adaptation_value[0, 1]] + constants.FACTOR * (parent_vector[j, selected_indexes[0]]
+            mutated_vector[j,i] = parent_vector[j, int(sorted_adaptation_value[0, 1])] + constants.FACTOR * (parent_vector[j, selected_indexes[0]]
                                                                                     - parent_vector[j, selected_indexes[1]])
 
 
