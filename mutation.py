@@ -6,9 +6,8 @@ import random
 
 def mutation_function(parent_vector):
     """
-    This function mutates the offspring vector. 2 types of mutation are implemented: non correlated 1 step and
-    non correlated n steps
-    :param parent_vector: vector compiling the offspring individuals
+    This function mutates the input vector. 2 types of mutation are implemented: 'DE/rand/1/bin' or 'DE/best/1/bin'
+    :param parent_vector: vector compiling the input individuals
     :return: mutated_vector: vector with the mutated offspring
     """
     # initialize the mutated vector
@@ -25,9 +24,8 @@ def mutation_function(parent_vector):
 
 def mutation_rand(parent_vector):
     """
-    This function mutates the offspring vector. 2 types of mutation are implemented: non correlated 1 step and
-    non correlated n steps
-    :param parent_vector: vector compiling the offspring individuals
+    function implementing the 'DE/rand/1/bin' mutation algorithm
+    :param parent_vector: vector compiling the input individuals
     :return: mutated_vector: vector with the mutated offspring
     """
     #initialize the mutated vector
@@ -48,6 +46,11 @@ def mutation_rand(parent_vector):
     return mutated_vector
 
 def mutation_best(parent_vector):
+    """
+    function implementing the 'DE/best/1/bin' mutation algorithm
+    :param parent_vector: vector compiling the input individuals
+    :return: mutated_vector: vector with the mutated offspring
+    """
 
     # initialize the mutated vector and adaptation value
     mutated_vector = np.full(shape=(constants.DIM, constants.POPULATION_SIZE), fill_value=np.nan)
