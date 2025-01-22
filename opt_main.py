@@ -1,6 +1,7 @@
 import constants
 import initialization
 import mutation
+import recombination
 
 import numpy as np
 
@@ -34,6 +35,9 @@ def main():
 
             # Mutation
             mutated_vector = mutation.mutation_function(parent_population)
+
+            # Recombination
+            recombined_vector = recombination.recombination_function(parent_population, mutated_vector)
 
             # Parent selection and recombination
 

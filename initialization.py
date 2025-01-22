@@ -7,7 +7,7 @@ def initialization_function():
     This function initializes the first population to start with the evolution strategy
     :return: initial_population: initial population vector
     """
-    # vector initialization, depends on the mutation type
+    # vector initialization
     initial_population = np.full(shape=(constants.DIM, constants.POPULATION_SIZE), fill_value=np.nan)
 
     # initialization of the population depending on the function to analyze
