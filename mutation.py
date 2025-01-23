@@ -43,6 +43,25 @@ def mutation_rand(parent_vector):
             mutated_vector[j,i] = parent_vector[j, selected_indexes[2]] + constants.MUTATION_FACTOR * (parent_vector[j, selected_indexes[0]]
                                                                                     - parent_vector[j, selected_indexes[1]])
 
+            # bounce-back method to repair values outside the function space
+            # sphere function case
+            if constants.FUNCTION == 'SPHERE':
+                if mutated_vector[j,i] < constants.SHIFTED_SPH_START:
+                    mutated_vector[j, i] = (parent_vector[j, selected_indexes[2]] + np.random.uniform(0,1) *
+                                            (constants.SHIFTED_SPH_START -  parent_vector[j, selected_indexes[2]]))
+                if mutated_vector[j,i] < constants.SHIFTED_SPH_STOP:
+                    mutated_vector[j, i] = (parent_vector[j, selected_indexes[2]] + np.random.uniform(0, 1) *
+                                            (constants.SHIFTED_SPH_STOP - parent_vector[j, selected_indexes[2]]))
+
+            # Schwefel function case
+            if constants.FUNCTION == 'SCHWEFEL':
+                if mutated_vector[j, i] < constants.SCHWEFEL_START:
+                    mutated_vector[j, i] = (parent_vector[j, selected_indexes[2]] + np.random.uniform(0, 1) *
+                                            (constants.SCHWEFEL_START - parent_vector[j, selected_indexes[2]]))
+                if mutated_vector[j, i] < constants.SCHWEFEL_STOP:
+                    mutated_vector[j, i] = (parent_vector[j, selected_indexes[2]] + np.random.uniform(0, 1) *
+                                            (constants.SCHWEFEL_STOP - parent_vector[j, selected_indexes[2]]))
+
     return mutated_vector
 
 def mutation_best(parent_vector):
@@ -83,5 +102,23 @@ def mutation_best(parent_vector):
             mutated_vector[j,i] = parent_vector[j, int(sorted_adaptation_value[0, 1])] + constants.MUTATION_FACTOR * (parent_vector[j, selected_indexes[0]]
                                                                                     - parent_vector[j, selected_indexes[1]])
 
+            # bounce-back method to repair values outside the function space
+            # sphere function case
+            if constants.FUNCTION == 'SPHERE':
+                if mutated_vector[j,i] < constants.SHIFTED_SPH_START:
+                    mutated_vector[j, i] = (parent_vector[j, selected_indexes[2]] + np.random.uniform(0,1) *
+                                            (constants.SHIFTED_SPH_START -  parent_vector[j, selected_indexes[2]]))
+                if mutated_vector[j,i] < constants.SHIFTED_SPH_STOP:
+                    mutated_vector[j, i] = (parent_vector[j, selected_indexes[2]] + np.random.uniform(0, 1) *
+                                            (constants.SHIFTED_SPH_STOP - parent_vector[j, selected_indexes[2]]))
+
+            # Schwefel function case
+            if constants.FUNCTION == 'SCHWEFEL':
+                if mutated_vector[j, i] < constants.SCHWEFEL_START:
+                    mutated_vector[j, i] = (parent_vector[j, selected_indexes[2]] + np.random.uniform(0, 1) *
+                                            (constants.SCHWEFEL_START - parent_vector[j, selected_indexes[2]]))
+                if mutated_vector[j, i] < constants.SCHWEFEL_STOP:
+                    mutated_vector[j, i] = (parent_vector[j, selected_indexes[2]] + np.random.uniform(0, 1) *
+                                            (constants.SCHWEFEL_STOP - parent_vector[j, selected_indexes[2]]))
 
     return mutated_vector
