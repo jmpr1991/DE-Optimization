@@ -106,19 +106,19 @@ def mutation_best(parent_vector):
             # sphere function case
             if constants.FUNCTION == 'SPHERE':
                 if mutated_vector[j,i] < constants.SHIFTED_SPH_START:
-                    mutated_vector[j, i] = (parent_vector[j, selected_indexes[2]] + np.random.uniform(0,1) *
-                                            (constants.SHIFTED_SPH_START -  parent_vector[j, selected_indexes[2]]))
+                    mutated_vector[j, i] = (parent_vector[j, int(sorted_adaptation_value[0, 1])] + np.random.uniform(0,1) *
+                                            (constants.SHIFTED_SPH_START -  parent_vector[j, int(sorted_adaptation_value[0, 1])]))
                 if mutated_vector[j,i] < constants.SHIFTED_SPH_STOP:
-                    mutated_vector[j, i] = (parent_vector[j, selected_indexes[2]] + np.random.uniform(0, 1) *
-                                            (constants.SHIFTED_SPH_STOP - parent_vector[j, selected_indexes[2]]))
+                    mutated_vector[j, i] = (parent_vector[j, int(sorted_adaptation_value[0, 1])] + np.random.uniform(0, 1) *
+                                            (constants.SHIFTED_SPH_STOP - parent_vector[j, int(sorted_adaptation_value[0, 1])]))
 
             # Schwefel function case
             if constants.FUNCTION == 'SCHWEFEL':
                 if mutated_vector[j, i] < constants.SCHWEFEL_START:
-                    mutated_vector[j, i] = (parent_vector[j, selected_indexes[2]] + np.random.uniform(0, 1) *
-                                            (constants.SCHWEFEL_START - parent_vector[j, selected_indexes[2]]))
+                    mutated_vector[j, i] = (parent_vector[j, int(sorted_adaptation_value[0, 1])] + np.random.uniform(0, 1) *
+                                            (constants.SCHWEFEL_START - parent_vector[j, int(sorted_adaptation_value[0, 1])]))
                 if mutated_vector[j, i] < constants.SCHWEFEL_STOP:
-                    mutated_vector[j, i] = (parent_vector[j, selected_indexes[2]] + np.random.uniform(0, 1) *
-                                            (constants.SCHWEFEL_STOP - parent_vector[j, selected_indexes[2]]))
+                    mutated_vector[j, i] = (parent_vector[j, int(sorted_adaptation_value[0, 1])] + np.random.uniform(0, 1) *
+                                            (constants.SCHWEFEL_STOP - parent_vector[j, int(sorted_adaptation_value[0, 1])]))
 
     return mutated_vector
