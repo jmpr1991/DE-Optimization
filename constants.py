@@ -29,4 +29,5 @@ POPULATION_SIZE = 30 # population size
 ALGO_TYPE = 'DE/best/1/bin' # type of Differential Evolution algorithm selected 'DE/rand/1/bin' or 'DE/best/1/bin'
 MUTATION_FACTOR = 0.8 #mutation factor
 CROSS_PROB = 0.5 # cross probability
+ERROR = 1e-3
 
