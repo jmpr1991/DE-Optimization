@@ -39,11 +39,6 @@ def main():
             # Recombination
             recombined_vector = recombination.recombination_function(parent_population, mutated_vector)
 
-            # Parent selection and recombination
-
-
-
-
             # Survival selection
 
             #save the best adaptation value

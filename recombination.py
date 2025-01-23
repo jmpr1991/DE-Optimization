@@ -5,7 +5,12 @@ import constants
 import numpy as np
 
 def recombination_function(parent_vector, mutated_vector):
-
+    """
+    This function recombines the parent vector and mutated vector, following the differential evolution rules
+    :param parent_vector: parent vector
+    :param mutated_vector: mutated vector
+    :return: recombined_vector: recombined vector
+    """
     # vector initialization
     recombined_vector = np.full(shape=(constants.DIM, constants.POPULATION_SIZE), fill_value=np.nan)
 
