@@ -31,11 +31,14 @@ def mutation_rand(parent_vector):
     #initialize the mutated vector
     mutated_vector = np.full(shape=(constants.DIM, constants.POPULATION_SIZE), fill_value=np.nan)
 
-    #create the index vector for identification
-    index_vector = np.linspace(0, constants.POPULATION_SIZE - 1, num=constants.POPULATION_SIZE, dtype=int)
-
     # create the mutated vector
     for i in range(constants.POPULATION_SIZE):
+
+        # create the index vector for identification
+        index_vector = list(np.linspace(0, constants.POPULATION_SIZE - 1, num=constants.POPULATION_SIZE, dtype=int))
+        #remove objective vector from the list
+        index_vector.pop(i)
+
         # select 3 random indexes to make the differences to develop the mutated vector
         selected_indexes = random.sample(list(index_vector), 3)
 
@@ -90,12 +93,15 @@ def mutation_best(parent_vector):
     # sort the adaptation value to pick the minimum
     sorted_adaptation_value = adaptation_value[np.argsort(adaptation_value[:, 0]), :]
 
-    #create the index vector for identification
-    index_vector = np.linspace(0, constants.POPULATION_SIZE - 1, num=constants.POPULATION_SIZE, dtype=int)
-
     # create the mutated vector
     for i in range(constants.POPULATION_SIZE):
-        # select 3 random indexes to make the differences to develop the mutated vector
+
+        # create the index vector for identification
+        index_vector = list(np.linspace(0, constants.POPULATION_SIZE - 1, num=constants.POPULATION_SIZE, dtype=int))
+        #remove best vector from the list
+        index_vector.pop(int(sorted_adaptation_value[0,1]))
+
+        # select 2 random indexes to make the differences to develop the mutated vector
         selected_indexes = random.sample(list(index_vector), 2)
 
         for j in range(constants.DIM):

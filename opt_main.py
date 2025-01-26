@@ -43,7 +43,7 @@ def main():
 
             # Survival selection
             parent_population, parent_adaptation_value = survival_selection.survival_selection_function(recombined_vector,
-                                                                                                        mutated_vector)
+                                                                                                        parent_population)
 
             #save the best adaptation value
             best_adaptation_value[gen] = np.min(parent_adaptation_value)
@@ -59,7 +59,8 @@ def main():
                 break
 
             # compute the second termination condition (algorithm blocked in a local minimum)
-            if abs(best_adaptation_value[gen] - best_adaptation_value[gen-1]) < constants.ERROR**2:
+            if (abs(best_adaptation_value[gen] - best_adaptation_value[gen-1]) < constants.ERROR**2 and
+                    abs(best_adaptation_value[gen] - best_adaptation_value[gen-1]) != 0): #this termination condition is injected to avoid false terminations when elitism is applied
                 best_adaptation_value_vector.append(best_adaptation_value[gen])
                 gen_converge.append(gen)
                 break
