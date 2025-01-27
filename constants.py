@@ -28,8 +28,8 @@ N_EXECUTIONS = 10 #number of executions
 N_GENERATIONS = 1200 #number of generations
 DIM = 10 # function dimension
 POPULATION_SIZE = 30 # population size
-ALGO_TYPE = 'DE/rand/1/bin' # type of Differential Evolution algorithm selected 'DE/rand/1/bin' or 'DE/best/1/bin'
-MUTATION_FACTOR = 0.6 #mutation factor
+ALGO_TYPE = 'DE/best/1/bin' # type of Differential Evolution algorithm selected 'DE/rand/1/bin' or 'DE/best/1/bin'
+MUTATION_FACTOR = 1 #mutation factor
 CROSS_PROB = 0 # cross probability
 ERROR = 1e-3 # allowed error to converge
 

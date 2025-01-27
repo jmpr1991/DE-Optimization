@@ -59,11 +59,11 @@ def main():
                 break
 
             # compute the second termination condition (algorithm blocked in a local minimum)
-            #if (abs(best_adaptation_value[gen] - best_adaptation_value[gen-1]) < constants.ERROR**3 and
-            #        abs(best_adaptation_value[gen] - best_adaptation_value[gen-1]) != 0): #this termination condition is injected to avoid false terminations when elitism is applied
-            #    best_adaptation_value_vector.append(best_adaptation_value[gen])
-            #    gen_converge.append(gen)
-            #    break
+            if (abs(best_adaptation_value[gen] - best_adaptation_value[gen-1]) < constants.ERROR**3 and
+                    abs(best_adaptation_value[gen] - best_adaptation_value[gen-1]) != 0): #this termination condition is injected to avoid false terminations when elitism is applied
+                best_adaptation_value_vector.append(best_adaptation_value[gen])
+                gen_converge.append(gen)
+                break
 
             # jump to next generation
             gen = gen + 1
