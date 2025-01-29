@@ -22,7 +22,7 @@ SCHWEFEL_STOP = 500 # Schwefel function limits
 MIN = 0 # Minimum of the function. The minimum is shared by Sphere and Schwefel functions with this configuration
 
 #problem characteristics
-FUNCTION = 'SCHWEFEL' # parameter to indicate the function to optimize 'SPHERE' or 'SCHWEFEL'
+FUNCTION = 'SPHERE' # parameter to indicate the function to optimize 'SPHERE' or 'SCHWEFEL'
 ALGO_TYPE = 'DE/best/1/bin' # type of Differential Evolution algorithm selected 'DE/rand/1/bin' or 'DE/best/1/bin'
 
 # constant parameters
