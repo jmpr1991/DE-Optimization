@@ -9,10 +9,6 @@ import numpy as np
 
 def main():
 
-    # raise an error in case some of these constants/botons are not properly set
-    assert 'SPHERE' or 'SCHWEFEL' == constants.FUNCTION
-    assert 'DE/best/1/bin' or 'DE/rand/1/bin' == constants.ALGO_TYPE
-
     # initialize success rate and success mean evaluations number (pex) parameters
     success_rate = 0
     pex = []
