@@ -25,6 +25,7 @@ MIN = 0 # Minimum of the function. The minimum is shared by Sphere and Schwefel 
 FUNCTION = 'SCHWEFEL' # parameter to indicate the function to optimize 'SPHERE' or 'SCHWEFEL'
 ALGO_TYPE = 'DE/best/1/bin' # type of Differential Evolution algorithm selected 'DE/rand/1/bin' or 'DE/best/1/bin'
 
+# constant parameters
 N_EXECUTIONS = 10 #number of executions
 N_GENERATIONS = 1200 #number of generations
 DIM = 10 # function dimension
